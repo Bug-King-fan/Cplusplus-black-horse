@@ -1,0 +1,31 @@
+# Project: 数组的封装
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 数组类的封装.o Myarray.o
+LINKOBJ  = 数组类的封装.o Myarray.o
+LIBS     = -L"E:/devC++/Dev-Cpp/MinGW64/lib" -L"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/devC++/Dev-Cpp/MinGW64/include" -I"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/devC++/Dev-Cpp/MinGW64/include" -I"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 数组的封装.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+数组类的封装.o: 数组类的封装.cpp
+	$(CPP) -c 数组类的封装.cpp -o 数组类的封装.o $(CXXFLAGS)
+
+Myarray.o: Myarray.cpp
+	$(CPP) -c Myarray.cpp -o Myarray.o $(CXXFLAGS)

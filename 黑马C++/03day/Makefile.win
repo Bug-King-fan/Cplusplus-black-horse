@@ -1,0 +1,34 @@
+# Project: 03 namespace 命名空间的使用
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = game1.o namespace的使用.o game2.o
+LINKOBJ  = game1.o namespace的使用.o game2.o
+LIBS     = -L"E:/devC++/Dev-Cpp/MinGW64/lib" -L"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/devC++/Dev-Cpp/MinGW64/include" -I"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/devC++/Dev-Cpp/MinGW64/include" -I"E:/devC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/devC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "03 namespace 命名空间的使用.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+game1.o: game1.cpp
+	$(CPP) -c game1.cpp -o game1.o $(CXXFLAGS)
+
+namespace的使用.o: namespace的使用.cpp
+	$(CPP) -c namespace的使用.cpp -o namespace的使用.o $(CXXFLAGS)
+
+game2.o: game2.cpp
+	$(CPP) -c game2.cpp -o game2.o $(CXXFLAGS)

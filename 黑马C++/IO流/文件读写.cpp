@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream> //文件读写头文件 
+#include <direct.h> //获取当前路径
 
 using namespace std;
 
@@ -112,6 +113,9 @@ void test3(){
 
 int main(){
 	test1();
+	char cwd[256];
+    _getcwd(cwd, 256);
+    cout << cwd << endl;
 	//text2();
 	return 0;
 } 

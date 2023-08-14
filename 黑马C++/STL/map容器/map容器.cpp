@@ -17,7 +17,7 @@
 		ma.size()
 		ma.empty()
 	(4)map插入元素操作
-		①ma.insert(pair<type1,type2>(elem1,elem2)) 往容器插入元素，返回pair<iterator,bool>
+		①ma.insert(pair<type1,type2>(elem1,elem2)) 往容器插入元素，返回pair<iterator,bool>   pair 对组 
 		②ma.insert(make_pair(elem1,elem2));
 		③ma.insert(map<type1,type2>::value_type(elem1,elem2))
 		④ma[key]=value;   若无对应数据，用key取访问不存在的key，编译器会自动把不存在的key加到map中value为0
@@ -33,6 +33,7 @@
 		ma.erase(keyelem)   删除容器中key为keyelem的对组 
 		(6)查找 
 		ma.find(key)    查找key是否存在 存在返回该元素的迭代器，不存在返回 end() 
+		时间复杂度O(logn) 
 		ma.count(keyelem) 返回容器中key为keyelem的对组个数 
 		ma.lower_bound(keyelem) 返回key>=keyelem的第一个元素的迭代器 
 		ma.upper_bound(keyelem)  返回key>keyelem的第一个元素的迭代器
@@ -44,6 +45,17 @@
 		
 		cout<<pos.first->first<<" " <<pos.first->second<<endl; 
 		cout<<pos.second->first<<" " <<pos.second->second<<endl;
+		
+		
+		//auto 访问
+		for(auto [k,v] : mp){ //仅可访问无法修改 
+			cout<<k<<" "<<v<<endl;
+		}
+		for(auto &[k,v] : mp){ //可以访问和修改 
+			k++;
+			v++; 
+			cout<<k<<" "<<v<<endl;
+		}
 */
 #include<iostream>
 #include<map>

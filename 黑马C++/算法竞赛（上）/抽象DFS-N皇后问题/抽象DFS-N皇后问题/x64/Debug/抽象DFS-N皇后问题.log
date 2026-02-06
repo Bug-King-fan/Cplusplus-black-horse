@@ -1,0 +1,4 @@
+﻿  源.cpp
+E:\算法竞赛（上）\抽象DFS-N皇后问题\抽象DFS-N皇后问题\源.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\算法竞赛（上）\抽象DFS-N皇后问题\抽象DFS-N皇后问题\源.cpp(3,22): warning C4091: “typedef ”: 没有声明变量时忽略“__int64”的左侧
+  抽象DFS-N皇后问题.vcxproj -> E:\算法竞赛（上）\抽象DFS-N皇后问题\x64\Debug\抽象DFS-N皇后问题.exe
